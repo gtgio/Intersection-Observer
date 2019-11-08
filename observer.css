@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+}
+.header{
+  height: 80px;
+}
+
+.logo {
+  width: 10%;
+}
+
+#part1, #part3, #part5 {
+  background-color: #1a1a1e;
+  color: white;
+}
+
+#part2, #part4, #part6 {
+  background-color: lightgrey;
+
+}
+
+html body nav {
+  background: #424242;
+  position: sticky;
+  top: 0;
+}
+html body nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+html body nav ul li a {
+  display: block;
+  padding: 1em;
+  color: #ddd;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+html body nav ul li a.selected {
+  border-bottom: 6px solid midnightblue;
+}
+html body nav ul li a:hover {
+  color: royalblue;
+  background: #000;
+}
+html body nav ul li + li {
+  border-left: 1px solid #aaa;
+}
+html body section {
+  padding: 2em;
+  min-height: 100vh;
+  padding-top: 3em;
+  box-sizing: border-box;
+}
+html body section:nth-child(even) {
+  background-color: #ddd;
+}
+
+.show {
+    visibility: hidden;
+}
+
+.fadeIn {
+    -webkit-animation: animat_show 0.8s;
+    animation: animat_show 0.8s;
+    visibility: visible !important;
+}
+
+@-webkit-keyframes animat_show{
+    0%{opacity:0}
+    100%{opacity:1}
+}

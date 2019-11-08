@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Intersection Observer">
+    <meta name="author" content="Giovanni Martelli">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Avenir&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="observer.css">
+    <title>Intersection Observer Assignment</title>
+  </head>
+  <body>
+    <div class="header">
+    <h1><img class="logo" src="silverlogotrans.png">Intersection Observer by GMDevelopment</h1>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="#part1" class="selected">Part 1</a></li>
+        <li><a href="#part2">Part 2</a></li>
+        <li><a href="#part3">Part 3</a></li>
+        <li><a href="#part4">Part 4</a></li>
+        <li><a href="#part5">Part 5</a></li>
+        <li><a href="#part6">Part 6</a></li>
+      </ul>
+    </nav>
+    <section id="part1">
+      <h1>Intersection Observer</h1>
+      <p>This is the first section.</p>
+    </section>
+    <section id="part2">
+      <h1>Intersection Observer</h1>
+      <p>This is the second section.</p>
+      <img class="show" src="silverlogotrans.png">
+    </section>
+    <section id="part3">
+      <h1>Intersection Observer</h1>
+      <p>This is the third section.</p>
+    </section>
+    <section id="part4">
+      <h1>Intersection Observer</h1>
+      <p>This is the fourth section.</p>
+      <img class="show" src="silverlogotrans.png">
+    </section>
+    <section id="part5">
+      <h1>Intersection Observer</h1>
+      <p>This is the fifth section.</p>
+    </section>
+    <section id="part6">
+      <h1>Intersection Observer</h1>
+      <p>This is the sixth section.</p>
+      <img class="show" src="silverlogotrans.png">
+    </section>
+    <footer>
+      <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | GM Development</p>
+</footer>
+    <script src="observer.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+
+    <script>
+    function showImages(el) {
+    var windowHeight = jQuery( window ).height();
+    $(el).each(function(){
+        var thisPos = $(this).offset().top;
+
+        var topOfWindow = $(window).scrollTop();
+        if (topOfWindow + windowHeight - 200 > thisPos ) {
+            $(this).addClass("fadeIn");
+        }
+    });
+}
+
+// if the image in the window of browser when the page is loaded, show that image
+$(document).ready(function(){
+    showImages('.show');
+});
+
+// if the image in the window of browser when scrolling the page, show that image
+$(window).scroll(function() {
+    showImages('.show');
+});
+    </script>
+  </body>
+</html>
